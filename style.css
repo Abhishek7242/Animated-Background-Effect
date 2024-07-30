@@ -1,0 +1,45 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.moving-div {
+    position: absolute;
+    bottom: -60px;
+    border-radius: 50%;
+    animation: moveUp var(--animation-duration) cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    opacity: .6;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+@keyframes moveUp {
+    0%{
+        transform: translateY(0) scale(0.5);
+        opacity: .6;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 20px var(--box-shadow-color), 0 0 30px var(--box-shadow-color);
+    }
+    100% {
+        transform: translateY(-110vh) scale(1.4);
+        opacity: 0;
+        box-shadow: 0 0 20px var(--box-shadow-color), 0 0 30px var(--box-shadow-color);
+
+    }
+}
